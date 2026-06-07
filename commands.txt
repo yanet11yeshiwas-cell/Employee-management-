@@ -1,0 +1,61 @@
+## Database Setup
+
+Before running the application, create the MySQL database and required table.
+
+### Step 1: Start MySQL Server
+
+Open your terminal and log in to MySQL:
+
+```bash
+mysql -u root -p
+```
+
+Enter your MySQL password when prompted.
+
+### Step 2: Create Database
+
+```sql
+CREATE DATABASE employees;
+```
+
+### Step 3: Select Database
+
+```sql
+USE employees;
+```
+
+### Step 4: Create Employee Table
+
+```sql
+CREATE TABLE employeeDetails (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    dateOfBirth DATE,
+    joiningDate DATE,
+    salary DECIMAL(10,2),
+    department VARCHAR(255)
+);
+```
+
+### Step 5: Verify Table Structure
+
+```sql
+DESCRIBE employeeDetails;
+```
+
+### Step 6: Insert Sample Data
+
+```sql
+INSERT INTO employeeDetails
+(name, dateOfBirth, joiningDate, salary)
+VALUES
+("Example Name", "2004-02-27", "2023-11-01", 5000.00);
+```
+
+### Step 7: Verify Data
+
+```sql
+SELECT * FROM employeeDetails;
+```
+
+If the employee record appears successfully, the database setup is complete and the Employee Management System is ready to connect to MySQL.
